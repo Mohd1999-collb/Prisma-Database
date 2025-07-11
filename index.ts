@@ -2,6 +2,8 @@ import { PrismaClient } from "./generated/prisma";
 
 const prisma = new PrismaClient();
 
+// CRUD OPERATION
+
 // POST Request
 const createUser = async () => {
   // Create the single user
@@ -76,22 +78,24 @@ const updateUser = async () => {
 const deleteUser = async () => {
   // Delete the single user
   // const deleteUser = await prisma.profile.delete({
-  //   where: { id: 3 },
+  //   where: { id: 4 },
   // });
 
   //   Delete the multiple user
-  const updateManyUser = await prisma.profile.deleteMany({
+  // const idToDelete = [6, 7]
+  const nameToDelete = ["Monika"];
+  const deleteManyManyUser = await prisma.profile.deleteMany({
     where: {
-      id: {
-        in: [1, 2],
+      name: {
+        in: nameToDelete,
       },
     },
   });
-  console.log(updateManyUser);
+  console.log(deleteManyManyUser);
 };
 
 const main = () => {
-  //   return createUser();
+  // return createUser();
   //   return getUser();
   //   return updateUser();
   return deleteUser();
