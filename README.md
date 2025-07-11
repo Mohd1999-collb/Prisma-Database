@@ -1,7 +1,12 @@
-📦 Database ORM – Prisma
+## Project Diagram
+
+<img width="3904" height="1528" alt="diagram" src="https://github.com/user-attachments/assets/4e514be6-17cb-4d7b-9929-27cc9dd17bc1" />
+
+
+## 📦 Database ORM – Prisma
 This project uses Prisma as an ORM (Object-Relational Mapping) tool to simplify database access and ensure type safety.
 
-✨ Why Prisma?
+## ✨ Why Prisma?
 Auto-generates a fully-typed TypeScript client for database operations.
 
 Makes it easy to work with relational databases like PostgreSQL, MySQL, SQLite, SQL Server, and MongoDB.
@@ -10,7 +15,7 @@ Supports migrations, data seeding, and relations between models.
 
 Improves developer productivity with rich VS Code autocompletion and intuitive API.
 
-🔧 Common commands:
+## 🔧 Common commands:
 
 | Command                  | What it does                            |
 | ------------------------ | --------------------------------------- |
@@ -19,7 +24,7 @@ Improves developer productivity with rich VS Code autocompletion and intuitive A
 | `npx prisma generate`    | Generate Prisma Client                  |
 | `npx prisma studio`      | Open visual editor for your DB          |
 
-📜 Prisma schema:
+## 📜 Prisma schema:
 Define your database models in the prisma/schema.prisma file.
 Example:
 
@@ -33,5 +38,5 @@ model User {
   createdAt DateTime @default(now())
 }
 
-📚 Learn more:
+## 📚 Learn more:
 Prisma Docs : https://www.prisma.io/docs
