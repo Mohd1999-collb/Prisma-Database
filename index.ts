@@ -7,14 +7,13 @@ const prisma = new PrismaClient();
 // POST Request
 const createUser = async () => {
   // Create the single user
-
-  // const user = await prisma.profile.create({
-  //   data: {
-  //     name: "Monika",
-  //     email: "monikadd7232@gmail.com",
-  //     Phone: 9389,
-  //   },
-  // });
+  const user = await prisma.profile.create({
+    data: {
+      name: "Monika",
+      email: "monikadd7232@gmail.com",
+      Phone: 9389,
+    },
+  });
 
   // Create the multiple user
   const manyUser = await prisma.profile.createMany({
@@ -36,7 +35,6 @@ const createUser = async () => {
       },
     ],
   });
-
   console.log(manyUser);
 };
 
@@ -48,10 +46,13 @@ const getUser = async () => {
   //   });
 
   //   Fetch the multiple user
-  const getManyUser = await prisma.profile.findMany({
-    where: { name: "Mohd Talib" },
-  });
-  console.log(getManyUser);
+  // const getManyUser = await prisma.profile.findMany({
+  //   where: { name: "Mohd Talib" },
+  // });
+
+  //   Fetch the all user
+  const getALLUser = await prisma.profile.findMany({});
+  console.log(getALLUser);
 };
 
 // UPDATE Request
@@ -65,13 +66,21 @@ const updateUser = async () => {
   //   });
 
   //   Update the multiple user
-  const updateManyUser = await prisma.profile.updateMany({
-    where: { name: "Mohd Talib" },
+  // const updateManyUser = await prisma.profile.updateMany({
+  //   where: { name: "Mohd Talib" },
+  //   data: {
+  //     name: "Abhishek",
+  //   },
+  // });
+
+  //   Update the all user
+  const updateAllUser = await prisma.profile.updateMany({
+    // where: { name: "Mohd Talib" },
     data: {
       name: "Abhishek",
     },
   });
-  console.log(updateManyUser);
+  console.log(updateAllUser);
 };
 
 // DELETE Request
@@ -83,22 +92,25 @@ const deleteUser = async () => {
 
   //   Delete the multiple user
   // const idToDelete = [6, 7]
-  const nameToDelete = ["Monika"];
-  const deleteManyManyUser = await prisma.profile.deleteMany({
-    where: {
-      name: {
-        in: nameToDelete,
-      },
-    },
-  });
-  console.log(deleteManyManyUser);
+  // const nameToDelete = ["Monika"];
+  // const deleteManyManyUser = await prisma.profile.deleteMany({
+  //   where: {
+  //     name: {
+  //       in: nameToDelete,
+  //     },
+  //   },
+  // });
+
+  // Delete the all user
+  const deleteAllUser = await prisma.profile.deleteMany({});
+  console.log(deleteAllUser);
 };
 
 const main = () => {
   // return createUser();
-  //   return getUser();
-  //   return updateUser();
-  return deleteUser();
+  return getUser();
+  // return updateUser();
+  // return deleteUser();
 };
 
 main()
